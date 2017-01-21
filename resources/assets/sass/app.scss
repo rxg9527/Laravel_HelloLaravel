@@ -6,4 +6,120 @@
 @import "variables";
 
 // Bootstrap
+// 样式文件导入
+// Sass 使用 @import 来导入其它的样式文件。如：
+// 上面代码将导入存放在 node_modules/bootstrap-sass/assets/stylesheets/bootstrap 文件夹中的所有样式文件。你也可以使用下面代码来对单独一个文件进行导入：
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// 变量
+// Sass 还允许你在代码中加入变量，所有的变量均以 $ 开头
+$navbar-color: #3c3e42;
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+.navbar-inverse {
+  background-color: $navbar-color;
+}
+
+// 引用父选择器
+// 你还可以在 Sass 嵌套中使用 & 对父选择器进行引用
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+  }
+}
+
+/* footer */
+// 嵌套
+// Sass 还允许你在选择器中进行相互嵌套，以减少代码量
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+
+  a {
+    color: #555;
+  }
+
+  a:hover {
+    color: #222;
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+
+  img.brand-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .slogon {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
