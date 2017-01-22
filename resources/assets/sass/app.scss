@@ -82,6 +82,13 @@ p {
   }
 }
 
+#logout {
+  cursor: default;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
 /* footer */
 // 嵌套
 // Sass 还允许你在选择器中进行相互嵌套，以减少代码量
