@@ -30,6 +30,10 @@ Route::resource('users', 'UsersController');
 // patch('/users/{id}', 'UsersController@update')->name('users.update');
 // delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
 
+Route::get('login', 'SessionController@create')->name('login');
+Route::post('login', 'SessionController@store')->name('login');
+Route::delete('logout', 'SessionController@destroy')->name('logout');
+
 // get('/', 'StaticPagesController@home');
 // get('/help', 'StaticPagesController@help');
 // get('/about', 'StaticPagesController@about');
