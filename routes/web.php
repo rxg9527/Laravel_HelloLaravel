@@ -34,6 +34,8 @@ Route::get('login', 'SessionController@create')->name('login');
 Route::post('login', 'SessionController@store')->name('login');
 Route::delete('logout', 'SessionController@destroy')->name('logout');
 
+Route::get('/users/{id}/edit', 'UsersController@edit')->name('users.edit');
+
 // get('/', 'StaticPagesController@home');
 // get('/help', 'StaticPagesController@help');
 // get('/about', 'StaticPagesController@about');
