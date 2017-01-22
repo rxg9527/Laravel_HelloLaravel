@@ -24,7 +24,7 @@ class SessionController extends Controller
             'password'  => $request->password,
         ];
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $request->has('remember'))) {
             session()->flash('success', '欢迎回来！');
             // 使用 Laravel 提供的 Auth::user() 方法来获取当前登录用户的信息，并将数据传送给路由。
             return redirect()->route('users.show', [Auth::user()]);
@@ -33,5 +33,12 @@ class SessionController extends Controller
             return redirect()->back();
         }
 
+    }
+
+    public function destroy()
+    {
+        Auth::logout();
+        session()->flash('success', '您已成功退出！');
+        return redirect('login');
     }
 }
