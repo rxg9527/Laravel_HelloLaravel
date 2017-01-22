@@ -20,6 +20,15 @@ Route::get('help', 'StaticPagesController@help')->name('help');
 Route::get('about', 'StaticPagesController@about')->name('about');
 
 Route::get('signup', 'UsersController@create')->name('signup');
+Route::resource('users', 'UsersController');
+// 上面代码将等同于：
+// get('/users', 'UsersController@index')->name('users.index');
+// get('/users/{id}', 'UsersController@show')->name('users.show');
+// get('/users/create', 'UsersController@create')->name('users.create');
+// post('/users', 'UsersController@store')->name('users.store');
+// get('/users/{id}/edit', 'UsersController@edit')->name('users.edit');
+// patch('/users/{id}', 'UsersController@update')->name('users.update');
+// delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
 
 // get('/', 'StaticPagesController@home');
 // get('/help', 'StaticPagesController@help');
