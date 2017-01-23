@@ -19,4 +19,4 @@
 
         {!! $users->render() !!}
     </div>
-@stop   
+@stop
